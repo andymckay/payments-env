@@ -1,0 +1,5 @@
+base:
+  environment:
+    - PYTHONUNBUFFERED=1
+    - PYTHONDONTWRITEBYTECODE=1
+    - TERM=xterm-256color

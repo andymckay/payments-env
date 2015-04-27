@@ -1,0 +1,25 @@
+service:
+  extends:
+    file: ../common.yml
+    service: service
+  links:
+    - solitude:solitude
+
+solitude:
+  extends:
+    file: ../common.yml
+    service: service
+  links:
+    - mysql:mysql
+
+mysql:
+  extends:
+    file: ../common.yml
+    service: mysql
+  volumes_from:
+    - mysqldata
+
+mysqldata:
+  extends:
+    file: ../common.yml
+    service: mysqldata
