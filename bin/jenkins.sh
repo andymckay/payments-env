@@ -8,7 +8,7 @@ pip install docker-compose
 
 export COMPOSE_PROJECT_NAME=payments_env_${JOB_NAME}_${BUILD_NUMBER}
 export COMPOSE_FILE=${WORKSPACE}/docker-compose-deploy.yml
-docker-compose build;
+sudo docker-compose build;
 
 # Delete virtualenv
 rm -rf $TDIR
