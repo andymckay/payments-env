@@ -6,9 +6,9 @@ virtualenv $TDIR
 . $TDIR/bin/activate
 pip install docker-compose
 
-export COMPOSE_PROJECT_NAME=pay
-COMPOSE_CMD="docker-compose jenkins${JOB_NAME}${BUILD_NUMBER} -f ../docker-compose-deploy.yml"
-$COMPOSE_CMD build;
+export COMPOSE_PROJECT_NAME=payments_env_${JOB_NAME}_${BUILD_NUMBER}
+export COMPOSE_FILE=../docker-compose-deploy.yml
+docker-compose build;
 
 # Delete virtualenv
 rm -rf $TDIR
