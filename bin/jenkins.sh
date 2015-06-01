@@ -1,9 +1,6 @@
 #!/bin/bash
-#
-# Runs unit_tests
-#
+# Setup docker compose.
 
-# Create a temporary virtualenv to install docker-compose
 TDIR=`mktemp -d`
 virtualenv $TDIR
 . $TDIR/bin/activate
