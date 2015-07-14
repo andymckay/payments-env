@@ -80,3 +80,7 @@ There are two docker configurations:
 
 ## Updating images
 If you update the nginx image, run the command ``build-and-push.sh``. This will update the image and push it to docker hub.
+
+## CircleCI
+
+Might work.
