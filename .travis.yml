@@ -1,0 +1,16 @@
+# For notes on docker see: http://docs.travis-ci.com/user/docker/
+language: python
+sudo: required
+addons:
+  hosts:
+    - pay.dev
+services:
+  - docker
+before_install:
+  - curl -L https://github.com/docker/compose/releases/download/1.4.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - docker-compose -f docker-compose-deploy.yml up -d
+install:
+  - pip install -r requirements.txt
+script: nosetests
